@@ -12,8 +12,8 @@ public class createGraph extends ApplicationFrame {
 
 	public createGraph(String applicationTitle, String chartTitle) {
 		super(applicationTitle);
-		JFreeChart lineChart = ChartFactory.createLineChart(chartTitle, "Time (In hours)", "Number of Logs", createDataset(),
-				PlotOrientation.VERTICAL, true, true, false);
+		JFreeChart lineChart = ChartFactory.createLineChart(chartTitle, "Time (In hours)", "Number of Logs",
+				createDataset(), PlotOrientation.VERTICAL, true, true, false);
 
 		ChartPanel chartPanel = new ChartPanel(lineChart);
 		chartPanel.setPreferredSize(new java.awt.Dimension(560, 367));
@@ -23,8 +23,8 @@ public class createGraph extends ApplicationFrame {
 	private DefaultCategoryDataset createDataset() {
 		constants x = new constants();
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-		for(int i=0;i<x.val.length;i++) {
-			dataset.addValue(x.val[i],"logs",Integer.toString(i+1));
+		for (int i = 0; i < x.val.length; i++) {
+			dataset.addValue(x.val[i], "logs", Integer.toString(i + 1));
 		}
 
 		return dataset;

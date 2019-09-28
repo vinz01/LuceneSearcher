@@ -13,62 +13,55 @@ import javax.swing.JTextArea;
 
 public class textWriter {
 
-    private class GuiOutputStream extends OutputStream {
-        JTextArea textArea;
+	private class GuiOutputStream extends OutputStream {
+		JTextArea textArea;
 
-        public GuiOutputStream(JTextArea textArea) {
-            this.textArea = textArea;
-        }
+		public GuiOutputStream(JTextArea textArea) {
+			this.textArea = textArea;
+		}
 
-        @Override
-        public void write(int data) throws IOException {
-            textArea.append(new String(new byte[] { (byte) data }));
-        }
-    }
+		@Override
+		public void write(int data) throws IOException {
+			textArea.append(new String(new byte[] { (byte) data }));
+		}
+	}
 
-    public void guiConsoleTest() throws IOException {
-        System.out.println("Normal java console output");
+	public void guiConsoleTest(String queryStr) throws IOException {
 
-        JTextArea textArea = new JTextArea(); // Output text area
+		JTextArea textArea = new JTextArea(); // Output text area
 
-        // Remember old output stream (optional)
-        // Stream for output to gui
-        GuiOutputStream rawout = new GuiOutputStream(textArea);
-        // Set new stream for System.out
-        System.setOut(new PrintStream(rawout, true));
+		// Remember old output stream (optional)
+		// Stream for output to GUI
+		GuiOutputStream rawout = new GuiOutputStream(textArea);
+		// Set new stream for System.out
+		System.setOut(new PrintStream(rawout, true));
 
-        // Demo gui
-        JFrame window = new JFrame("Console test 2");
-        window.add(new JScrollPane(textArea));
-        window.setSize(1400, 800);
-        window.setVisible(true);
-        
-        
-        
-        
-        
-        FileInputStream fstream = new FileInputStream("gui.txt");
-        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+		// Demo gui
+		JFrame window = new JFrame("Search Output for " + queryStr);
+		window.add(new JScrollPane(textArea));
+		window.setSize(1400, 800);
+		window.setVisible(true);
 
-        String strLine;
+		FileInputStream fstream = new FileInputStream("gui.txt");
+		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
-        //Read File Line By Line
-        try {
-			while ((strLine = br.readLine()) != null)   {
-			 
-			  System.out.println (strLine);
+		String strLine;
+
+		// Read File Line By Line
+		try {
+			while ((strLine = br.readLine()) != null) {
+
+				System.out.println(strLine);
 			}
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-        //Close the input stream
-        fstream.close();
-        
+		// Close the input stream
+		fstream.close();
 
-        // Clean up and exit
+		// Clean up and exit
 
-    }
+	}
 
 }
