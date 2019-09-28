@@ -1,5 +1,5 @@
 module luceneWriterExample {
-	exports vitHack;
+	exports luceneSearcher;
 
 	requires lucene.analyzers.common;
 	requires lucene.queryparser;

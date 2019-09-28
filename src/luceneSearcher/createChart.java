@@ -1,4 +1,4 @@
-package vitHack;
+package luceneSearcher;
 
 import javax.swing.JFrame;
 

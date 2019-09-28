@@ -1,4 +1,4 @@
-package vitHack;
+package luceneSearcher;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package vitHack;
+package luceneSearcher;
 
 import java.io.BufferedWriter;
 import java.io.File;

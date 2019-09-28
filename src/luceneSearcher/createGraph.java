@@ -1,4 +1,4 @@
-package vitHack;
+package luceneSearcher;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;

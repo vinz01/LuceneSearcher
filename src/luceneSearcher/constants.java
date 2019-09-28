@@ -1,4 +1,4 @@
-package vitHack;
+package luceneSearcher;
 
 public class constants {
 
