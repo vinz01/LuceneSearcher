@@ -2,7 +2,8 @@
 
 Log files such as Syslog are voluminous and grow continuously. Develop a tool to parse, index and query the log file contents using Lucene.Java may be choice of developing this mechanism.
 
-I have attached screenshots of output
+I have attached screenshots of outputs in OutputExample folder
+
 
 Instructions to run the code :
 
